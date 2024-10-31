@@ -1,0 +1,19 @@
+
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Pets
+        //- pre= JSON.stringify(data, null, 2)
+
+        .cards 
+            each pet in data
+                .card 
+                    h2.card__name #{pet.properties.pet_name}  #{pet.properties.breed}
+                    p.card__email #{pet.properties.age}
+
+        a(href="/pets/new")
+            button Add New Pet
